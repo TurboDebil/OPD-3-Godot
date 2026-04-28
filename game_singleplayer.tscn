@@ -1,22 +1,46 @@
-[gd_scene load_steps=5 format=3 uid="uid://bf3wnwihk7ymg"]
+[gd_scene format=3 uid="uid://bf3wnwihk7ymg"]
 
-[ext_resource type="Script" path="res://game.gd" id="2"]
+[ext_resource type="Script" uid="uid://2078bnnk7lw0" path="res://game.gd" id="2"]
 [ext_resource type="PackedScene" uid="uid://ctgumjaytuoch" path="res://level/level.tscn" id="3"]
 [ext_resource type="PackedScene" uid="uid://vh7pmputa7r3" path="res://player/player.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://c3dh7xb6ef76q" path="res://level/coin.tscn" id="4_2olji"]
 [ext_resource type="PackedScene" uid="uid://c7ai4bigaryci" path="res://gui/pause_menu_singleplayer.tscn" id="4_x6l06"]
 
-[node name="Game" type="Node"]
+[node name="Game" type="Node" unique_id=1597697215]
 process_mode = 3
 script = ExtResource("2")
 
-[node name="Level" parent="." instance=ExtResource("3")]
+[node name="Level" parent="." unique_id=117664058 instance=ExtResource("3")]
+position = Vector2(15, 18)
 
-[node name="Player" parent="Level" instance=ExtResource("4")]
-position = Vector2(90, 546)
+[node name="Player" parent="Level" unique_id=2080113354 instance=ExtResource("4")]
+position = Vector2(231, 275)
 
-[node name="InterfaceLayer" type="CanvasLayer" parent="."]
+[node name="Coin" parent="Level" unique_id=1527559568 instance=ExtResource("4_2olji")]
+position = Vector2(-157, 211)
+
+[node name="Coin" parent="Level/Coin" unique_id=1007884163 instance=ExtResource("4_2olji")]
+position = Vector2(-60, -282)
+
+[node name="Coin" parent="Level/Coin/Coin" unique_id=768490995 instance=ExtResource("4_2olji")]
+position = Vector2(2, 32)
+
+[node name="Coin" parent="Level/Coin/Coin/Coin" unique_id=94719640 instance=ExtResource("4_2olji")]
+position = Vector2(-5, -66)
+
+[node name="Coin" parent="Level/Coin/Coin/Coin/Coin" unique_id=91975968 instance=ExtResource("4_2olji")]
+position = Vector2(-3, -40)
+
+[node name="Coin2" parent="Level" unique_id=336377450 instance=ExtResource("4_2olji")]
+position = Vector2(106, 62)
+
+[node name="InterfaceLayer" type="CanvasLayer" parent="." unique_id=851933426]
 layer = 100
 
-[node name="PauseMenu" parent="InterfaceLayer" instance=ExtResource("4_x6l06")]
+[node name="PauseMenu" parent="InterfaceLayer" unique_id=20827727 instance=ExtResource("4_x6l06")]
+offset_left = 4.0
+offset_top = 6.0
+offset_right = 4.0
+offset_bottom = 6.0
 
 [connection signal="coin_collected" from="Level/Player" to="InterfaceLayer/PauseMenu" method="_on_coin_collected"]

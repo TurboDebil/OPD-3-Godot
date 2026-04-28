@@ -1218,6 +1218,33 @@ position = Vector2(700, 610)
 [node name="Coin2" parent="Coins/CoinsHorizontal1" unique_id=1142280149 instance=ExtResource("4")]
 position = Vector2(30, 0)
 
+[node name="Coin" parent="Coins/CoinsHorizontal1/Coin2" unique_id=1724797388 instance=ExtResource("4")]
+position = Vector2(-61, 0)
+
+[node name="Coin" parent="Coins/CoinsHorizontal1/Coin2/Coin" unique_id=163397343 instance=ExtResource("4")]
+position = Vector2(3, -32)
+
+[node name="Coin" parent="Coins/CoinsHorizontal1/Coin2/Coin/Coin" unique_id=1890123968 instance=ExtResource("4")]
+position = Vector2(26, 2)
+
+[node name="Coin" parent="Coins/CoinsHorizontal1/Coin2/Coin/Coin/Coin" unique_id=389577522 instance=ExtResource("4")]
+position = Vector2(32, -3)
+
+[node name="Coin" parent="Coins/CoinsHorizontal1/Coin2/Coin/Coin/Coin/Coin" unique_id=1876627724 instance=ExtResource("4")]
+position = Vector2(28, 2)
+
+[node name="Coin" parent="Coins/CoinsHorizontal1/Coin2/Coin/Coin/Coin/Coin/Coin" unique_id=369754140 instance=ExtResource("4")]
+position = Vector2(2, -33)
+
+[node name="Coin" parent="Coins/CoinsHorizontal1/Coin2/Coin/Coin/Coin/Coin/Coin/Coin" unique_id=1964098203 instance=ExtResource("4")]
+position = Vector2(-36, -4)
+
+[node name="Coin" parent="Coins/CoinsHorizontal1/Coin2/Coin/Coin/Coin/Coin/Coin/Coin/Coin" unique_id=281522516 instance=ExtResource("4")]
+position = Vector2(-34, 4)
+
+[node name="Coin" parent="Coins/CoinsHorizontal1/Coin2/Coin/Coin/Coin/Coin/Coin/Coin/Coin/Coin" unique_id=1849935048 instance=ExtResource("4")]
+position = Vector2(-25, 1)
+
 [node name="Coin3" parent="Coins/CoinsHorizontal1" unique_id=636568872 instance=ExtResource("4")]
 position = Vector2(60, 0)
 
@@ -1227,7 +1254,11 @@ position = Vector2(154, 43)
 [node name="Coin" parent="Coins/CoinsHorizontal3" unique_id=1071026634 instance=ExtResource("4")]
 
 [node name="Coin2" parent="Coins/CoinsHorizontal3" unique_id=648293107 instance=ExtResource("4")]
-position = Vector2(30, 0)
+position = Vector2(36, -28)
+
+[node name="Enemy4" parent="Coins/CoinsHorizontal3/Coin2" unique_id=1216012369 instance=ExtResource("2")]
+z_index = 2
+position = Vector2(343, 35)
 
 [node name="Coin3" parent="Coins/CoinsHorizontal3" unique_id=1577694000 instance=ExtResource("4")]
 position = Vector2(60, 0)
@@ -1271,10 +1302,22 @@ position = Vector2(122, 406)
 [node name="Coin" parent="Coins/CoinsArc4" unique_id=1356770138 instance=ExtResource("4")]
 
 [node name="Coin2" parent="Coins/CoinsArc4" unique_id=1764138933 instance=ExtResource("4")]
-position = Vector2(30, -10)
+position = Vector2(-283, -217)
 
 [node name="Coin3" parent="Coins/CoinsArc4" unique_id=745044061 instance=ExtResource("4")]
-position = Vector2(60, 0)
+position = Vector2(317, 79)
+
+[node name="Coin" parent="Coins/CoinsArc4/Coin3" unique_id=1134332213 instance=ExtResource("4")]
+position = Vector2(-583, -444)
+
+[node name="Coin" parent="Coins/CoinsArc4/Coin3/Coin" unique_id=147226677 instance=ExtResource("4")]
+position = Vector2(-354, -220)
+
+[node name="Coin" parent="Coins/CoinsArc4/Coin3/Coin/Coin" unique_id=8601481 instance=ExtResource("4")]
+position = Vector2(-355, -213)
+
+[node name="Coin2" parent="Coins/CoinsArc4/Coin3/Coin/Coin" unique_id=1951923801 instance=ExtResource("4")]
+position = Vector2(-355, -213)
 
 [node name="CoinsArc3" type="Node2D" parent="Coins" unique_id=203980867]
 position = Vector2(594, 332)
@@ -1333,11 +1376,31 @@ position = Vector2(544, 355)
 
 [node name="Enemy3" parent="Enemies" unique_id=1731657912 instance=ExtResource("2")]
 z_index = 2
-position = Vector2(492, 610)
+position = Vector2(470, 599)
+
+[node name="Enemy3" parent="Enemies/Enemy3" unique_id=898124145 instance=ExtResource("2")]
+z_index = 2
+position = Vector2(778, -635)
+
+[node name="Enemy4" parent="Enemies/Enemy3" unique_id=720085036 instance=ExtResource("2")]
+z_index = 2
+position = Vector2(859, -633)
+
+[node name="Enemy4" parent="Enemies/Enemy3/Enemy4" unique_id=441449177 instance=ExtResource("2")]
+z_index = 2
+position = Vector2(6, -56)
+
+[node name="Enemy5" parent="Enemies/Enemy3/Enemy4" unique_id=1552588686 instance=ExtResource("2")]
+z_index = 2
+position = Vector2(-76, -46)
 
 [node name="Enemy4" parent="Enemies" unique_id=55413895 instance=ExtResource("2")]
 z_index = 2
-position = Vector2(395, 53)
+position = Vector2(343, 35)
+
+[node name="Enemy4" parent="Enemies/Enemy4" unique_id=1789137202 instance=ExtResource("2")]
+z_index = 2
+position = Vector2(735, -71)
 
 [node name="ParallaxBackground" parent="." unique_id=1950485931 instance=ExtResource("7")]
 
@@ -1722,3 +1785,7 @@ z_index = -2
 position = Vector2(72, 639)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("17")
+
+[node name="Enemy4" parent="." unique_id=780181130 instance=ExtResource("2")]
+z_index = 2
+position = Vector2(343, 35)
