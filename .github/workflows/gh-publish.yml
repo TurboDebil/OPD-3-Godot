@@ -1,0 +1,38 @@
+name: godot-ci
+
+on:
+  push:
+    branches: [ main ]
+
+env:
+  GODOT_VERSION: 4.6.2-stable    
+
+jobs:
+  export-game:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write              
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Godot
+        uses: solarlabyrinth/action-setup-godot@v2
+        with:
+          version: ${{ env.GODOT_VERSION }}
+
+      - name: Export game for Windows
+        id: export
+        run: |
+          mkdir -p builds
+          godot --headless --export-release "OPD3-windows" builds/OPD3-windows.exe
+        continue-on-error: false
+
+      - name: Upload artifacts to Release
+        uses: ncipollo/release-action@v1.18.0
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+          tag: ${{ github.ref_name }}
+          name: Release ${{ github.ref_name }}
+          generateReleaseNotes: true
+          artifacts: builds/*
